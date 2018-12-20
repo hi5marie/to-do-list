@@ -1,23 +1,8 @@
 import React, {Component} from 'react';
-import dummyList from '../data/to_do_list';
 
-class List extends Component{
-    state = {
-        list: []
-    }
+const List = (props) => {
 
-    componentDidMount(){
-        this.getListData();
-    }
-
-    getListData(){
-        this.setState({
-            list: dummyList
-        });
-    }
-
-    render(){
-        const listElements = this.state.list.map((item, index) => {
+        const listElements = props.toDos.map((item) => {
 
             return <li key={item._id} className="collection-item">{item.title}</li>
 
@@ -28,7 +13,7 @@ class List extends Component{
                     {listElements}
                 </ul>
         );
-    }
-}
+
+};
 
 export default List;
