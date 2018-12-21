@@ -1,7 +1,7 @@
 {
   "name": "to-do-list",
   "version": "1.0.0",
-  "description": "To do list build with ReactJS",
+  "description": "To do list built with ReactJS",
   "main": "index.js",
   "scripts": {
     "start": "node dev_server.js",
