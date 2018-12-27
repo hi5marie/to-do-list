@@ -52,6 +52,7 @@ class App extends Component {
 
 
                 <Route path="/" exact render={(props) => {
+
                     return <List {...props} delete={this.deleteItem} toDos={list}/>;
                 }}/>
 
