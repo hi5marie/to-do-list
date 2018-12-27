@@ -11,9 +11,7 @@ export default (props) => {
 
                     <i className='material-icons'>delete</i>
 
-
                 </button>
-
 
             </div>
         </li>

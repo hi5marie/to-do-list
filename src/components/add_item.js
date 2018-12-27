@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavButton from './nav_button';
 
 class AddItem extends Component {
     state = {
@@ -6,12 +7,17 @@ class AddItem extends Component {
         details: ''
     }
 
-    handleSaveItem = (e) => {
+    handleSaveItem = async (e) => {
         e.preventDefault();
 
-        this.props.add(this.state);
+        await this.props.add(this.state);
 
-        this.reset();
+        //this.props.add(this.state);
+
+        this.props.history.push('/');
+
+        //this.reset();
+
     }
 
     reset = () => {
@@ -22,9 +28,19 @@ class AddItem extends Component {
     }
 
     render(){
+
         const { title, details } = this.state;
 
+        //console.log('Add Item Props:', this.props);
+
         return (
+
+            <div>
+
+            <h1 className="center">Add To Do Item</h1>
+
+            <NavButton to="/" text="Back To List" color="purple"/>
+
             <form onSubmit={this.handleSaveItem}>
                 <div className="row">
                     <div className="input-field col s8 offset-s2">
@@ -47,6 +63,11 @@ class AddItem extends Component {
                     </div>
                 </div>
             </form>
+
+
+
+        </div>
+
         );
     }
 }
