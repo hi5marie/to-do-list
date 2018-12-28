@@ -9,12 +9,10 @@ const List = (props) => {
         console.log('Item:', item);
 
         return <ListItem itemId={item._id} delete={() => props.delete(item._id)} key={item._id} title={item.title}/>
-
         //return <li key={item._id} className="collection-item">{item.title}</li>
     });
 
     return (
-
         <div>
 
             <h1 className="center">To Do List</h1>
@@ -25,10 +23,7 @@ const List = (props) => {
                 {listElements}
             </ul>
 
-
         </div>
-
-
     );
 }
 
